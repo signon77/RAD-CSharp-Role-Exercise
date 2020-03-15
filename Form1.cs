@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace RAD_CSharp_Role_Exercise
 {
@@ -30,7 +31,10 @@ namespace RAD_CSharp_Role_Exercise
                 };
 
                 //Get payments and write them to CSV file
-                _ = getPaymentsClient.GetPayments();
+                 Task t = getPaymentsClient.GetPayments();
+                TimeSpan ts = TimeSpan.FromMilliseconds(150);
+                if (!t.Wait(ts))
+                    throw new Exception($"The attempt to retrieve payments for portfolio {getPaymentsClient.Portfolio} timed out.");
 
                 // Inform user of task completion
                 MessageBox.Show($"Payments retrieved for portfolio: {getPaymentsClient.Portfolio}");

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -17,10 +18,10 @@ namespace RAD_CSharp_Role_Exercise
         }
 
         public async Task GetPayments()
-        {                   
+        {
             try
             {
-               // Get payments data
+                // Get payments data
                 HttpResponseMessage response = await HttpClient.GetAsync(EndPoint + Portfolio);
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
@@ -29,6 +30,10 @@ namespace RAD_CSharp_Role_Exercise
                 SavePayments(responseBody);
             }
             catch (HttpRequestException e)
+            {
+                throw e;
+            }
+            catch (Exception e)
             {
                 throw e;
             }
