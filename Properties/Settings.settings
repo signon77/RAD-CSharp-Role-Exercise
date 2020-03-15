@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="RAD_CSharp_Role_Exercise.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Portfolios" Type="System.String" Scope="User">
+      <Value Profile="(Default)">100,110,155</Value>
+    </Setting>
+    <Setting Name="SavePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\C#Test\PortfolioPayments.csv</Value>
+    </Setting>
+    <Setting Name="EndPoint" Type="System.String" Scope="User">
+      <Value Profile="(Default)">https://focus.interview/api/v1.0/payments/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
